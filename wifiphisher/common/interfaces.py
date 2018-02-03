@@ -228,8 +228,10 @@ class NetworkAdapter(object):
         :return: True if interface supports AP mode and False otherwise
         :rtype: bool
         """
-
-        return self._has_ap_mode
+        # Hack to allow Alfa cards to use WiFiPhisher w/o error in application
+        # Return True always
+        #return self._has_ap_mode
+        return True
 
     @has_ap_mode.setter
     def has_ap_mode(self, value):
